@@ -78,6 +78,8 @@ This reaches the in-app AI Chat too, not only external MCP clients. The chat tal
 
 In exchange, the platform-wide MCP server is no longer restricted to platform administrators. Any member holding `READ_MCP` in at least one project can authorize it, and it reaches exactly the projects whose role grants them that permission. Embedded users are the exception: they authorize MCP for their own project, as the embed SDK already does, and cannot mint a platform-wide token that would span every tenant they have been signed into.
 
+The MCP page now hands out the platform server address, `/mcp/platform`, rather than the project one, and the project settings dialog no longer carries an MCP Server tab.
+
 #### What you need to do
 
 Nothing, if your members use the built-in roles. If you have built a custom project role and expect its holders to connect an MCP client, or to use the AI Chat for anything beyond conversation, add the `READ_MCP` permission to it — otherwise their existing MCP clients stop working when you upgrade, rather than at the next token expiry. There is no environment variable, migration, or new setup step.
